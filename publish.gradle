@@ -1,4 +1,3 @@
-System.setProperty 'GRGIT_USER', System.getenv('GH_TOKEN')
 
 buildscript {
     repositories {
@@ -15,6 +14,7 @@ buildscript {
 
 apply plugin: 'org.ajoberstar.git-publish'
 gitPublish {
+  systemProperties['org.ajoberstar.grgit.auth.username'] = System.getenv('GH_TOKEN')
   repoUri = 'https://github.com/aim42/aim42.github.io.git'
   branch = 'master'
   contents {
