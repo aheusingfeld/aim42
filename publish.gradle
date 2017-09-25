@@ -14,7 +14,8 @@ buildscript {
 
 apply plugin: 'org.ajoberstar.git-publish'
 gitPublish {
-  System.setProperty('org.ajoberstar.grgit.auth.username', System.getenv('GH_TOKEN'))
+  token = System.getenv('GH_TOKEN')
+  System.setProperty('org.ajoberstar.grgit.auth.username', token)
   repoUri = 'https://github.com/aim42/aim42.github.io.git'
   branch = 'master'
   contents {
